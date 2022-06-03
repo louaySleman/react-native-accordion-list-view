@@ -12,8 +12,6 @@ import {toggleAnimation} from '../../animations/toggleAnimation';
 import PropTypes from 'prop-types';
 
 const AccordionItem = ({
-  title,
-  bodyText,
   customBody,
   customTitle,
   customIcon,
@@ -42,11 +40,7 @@ const AccordionItem = ({
     <View style={[styles.container, containerStyle]}>
       <TouchableOpacity onPress={() => toggleListItem()}>
         <View style={styles.titleContainer}>
-          {!customTitle ? (
-            <Text style={styles.title}>{title}</Text>
-          ) : (
-            customTitle()
-          )}
+          {customTitle()}
           <Animated.View style={{transform: [{rotateZ: arrowTransform}]}}>
             {!customIcon ? (
               <MaterialIcons
@@ -59,14 +53,7 @@ const AccordionItem = ({
           </Animated.View>
         </View>
       </TouchableOpacity>
-      {showContent &&
-        (!customBody ? (
-          <View style={styles.body}>
-            <Text>{bodyText}</Text>
-          </View>
-        ) : (
-          customBody()
-        ))}
+      {showContent && customBody()}
     </View>
   );
 };
@@ -97,8 +84,6 @@ const styles = StyleSheet.create({
 });
 
 AccordionItem.propTypes = {
-  title: PropTypes.string,
-  bodyText: PropTypes.string,
   customBody: PropTypes.func,
   customTitle: PropTypes.func,
   customIcon: PropTypes.func,
@@ -108,8 +93,6 @@ AccordionItem.propTypes = {
 };
 
 AccordionItem.defaultProps = {
-  title: null,
-  bodyText: null,
   customBody: null,
   customTitle: null,
   customIcon: null,

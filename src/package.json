@@ -1,5 +1,5 @@
 {
-  "name": "react-native-accordion-list",
+  "name": "react-native-accordion-list-view",
   "version": "1.0.0",
   "description": "Animated accordion collapsable List for react native",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/louaySleman/react-native-accordion-list.git"
+    "url": "git+https://github.com/louaySleman/react-native-accordion-list-view.git"
   },
   "keywords": [
     "react",
@@ -27,7 +27,7 @@
   "author": "Louay Sleman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/louaySleman/react-native-accordion-list/issues"
+    "url": "https://github.com/louaySleman/react-native-accordion-list-view/issues"
   },
-  "homepage": "https://github.com/louaySleman/react-native-accordion-list#readme"
+  "homepage": "https://github.com/louaySleman/react-native-accordion-list-view"
 }

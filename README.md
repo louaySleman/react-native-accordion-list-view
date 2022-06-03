@@ -1,13 +1,13 @@
-## react-native-accordion-list
+## react-native-accordion-list-view
 A high performance, beautiful and fully customizable Accordion list for React Native.
 Implemented using [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
 ## Getting started
 ```js
-    npm install react-native-accordion-list --save
+    npm install react-native-accordion-list-view-view --save
 ```
 or
 ```js
-    yarn add react-native-accordion-list
+    yarn add react-native-accordion-list-view
 ```
 Now we need to install [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
 
@@ -20,7 +20,7 @@ or
 ```
 
 ### Demo
-![](https://github.com/hoaphantn7604/file-upload/blob/master/document/navigationbar/demo.gif)
+![](https://github.com/louaySleman/react-native-accordion-list-view/examples/demo.gif)
 
 
 ### Accordion list
@@ -45,7 +45,7 @@ This is a wrapper around `Flatlist`, all their props works well and the inherite
 ```javascript
 import React from 'react';
 import {View, SafeAreaView, StyleSheet, Text} from 'react-native';
-import {AccordionList} from 'react-native-accordion-list';
+import {AccordionList} from 'react-native-accordion-list-view';
 
 const App = () => {
     const data = [
@@ -103,7 +103,7 @@ This component allows you to use `Accordion Item` component in any place if you 
 ```javascript
 import React from 'react';
 import {View, SafeAreaView, StyleSheet, Text, ScrollView} from 'react-native';
-import {AccordionItem} from 'react-native-accordion-list';
+import {AccordionItem} from 'react-native-accordion-list-view';
 
 const App = () => {
   const data = [
