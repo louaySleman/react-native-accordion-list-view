@@ -33,8 +33,8 @@ or
 ```
 
 ### Demo
-<p style="width: 30vw">
-   <img style="max-width: 100%" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
+<p>
+   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
 </p>
 
 
