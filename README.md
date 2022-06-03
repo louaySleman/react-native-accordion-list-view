@@ -20,7 +20,7 @@ or
 ```
 
 ### Demo
-![](https://github.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif)
+![](https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif)
 
 
 ### Accordion list
