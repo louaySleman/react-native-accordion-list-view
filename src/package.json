@@ -1,0 +1,33 @@
+{
+  "name": "react-native-accordion-list",
+  "version": "1.0.0",
+  "description": "Animated accordion collapsable List for react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louaySleman/react-native-accordion-list.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "Accordion",
+    "Collapse",
+    "show",
+    "hide",
+    "click to show/hide",
+    "android",
+    "ios"
+  ],
+  "dependencies": {
+    "react-native-vector-icons": "*"
+  },
+  "author": "Louay Sleman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/louaySleman/react-native-accordion-list/issues"
+  },
+  "homepage": "https://github.com/louaySleman/react-native-accordion-list#readme"
+}
