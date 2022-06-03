@@ -1,6 +1,19 @@
 ## react-native-accordion-list-view
 A high performance, beautiful and fully customizable Accordion list for React Native.
 Implemented using [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
+
+
+<p align="left">
+  <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v1.0-blue"></a>
+  <a href="https://travis-ci.org/react-native-mapbox-boundaries/react-native-accordion-list-view"><img src="https://img.shields.io/travis/react-native-elements/react-native-elements/master.svg"></a>
+</p>
+
+<p align="left">
+  <a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+
+</p>
+
 ## Getting started
 ```js
     npm install react-native-accordion-list-view-view --save
@@ -20,8 +33,8 @@ or
 ```
 
 ### Demo
-<p style="width: 30%">
-<img src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
+<p style="width: 30vw">
+   <img style="max-width: 100%" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
 </p>
 
 
