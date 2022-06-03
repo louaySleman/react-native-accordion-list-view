@@ -21,7 +21,7 @@ or
 
 ### Demo
 <p style="width: 30%">
-<img src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
+   <img src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" style="max-width: 100%"/>
 </p>
 
 
