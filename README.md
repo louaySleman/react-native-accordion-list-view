@@ -16,7 +16,7 @@ Implemented using [react-native-vector-icons](https://github.com/oblador/react-n
 
 ## Getting started
 ```js
-    npm install react-native-accordion-list-view-view --save
+    npm install react-native-accordion-list-view --save
 ```
 or
 ```js
@@ -50,6 +50,7 @@ or
 | style              | ViewStyle                | No        | {}                  | Styling for container view                                                                       |
 | animationDuration  | Number                   | No        | 300                 | Accordion animation duration                                                                     |
 | isRTL             | Boolean                   | No        | false               | Support RTL                                                                                      |
+
 
 ###More props
 
