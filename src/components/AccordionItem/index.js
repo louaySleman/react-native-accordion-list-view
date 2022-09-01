@@ -40,7 +40,7 @@ const AccordionItem = ({
     <View style={[styles.container, containerStyle]}>
       <TouchableOpacity onPress={() => toggleListItem()}>
         <View style={styles.titleContainer}>
-          {customTitle()}
+          {!isRTL && customTitle()}
           <Animated.View style={{transform: [{rotateZ: arrowTransform}]}}>
             {!customIcon ? (
               <MaterialIcons
@@ -51,6 +51,7 @@ const AccordionItem = ({
               customIcon()
             )}
           </Animated.View>
+          {isRTL && customTitle()}
         </View>
       </TouchableOpacity>
       {showContent && customBody()}
