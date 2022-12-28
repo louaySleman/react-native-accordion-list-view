@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "jsx": "react",
+    "lib": [
+      "es6"
+    ],
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "target": "esnext"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
