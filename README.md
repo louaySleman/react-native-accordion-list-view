@@ -57,12 +57,12 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 ### Breaking History:
 
-- [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple expands, Allow make an `AccordionItem` already open by default using `isOpen` property, Add onPress for the `AccordionItem`.
+- [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple extensions, allow `AccordionItem` to be opened by default using `isOpen` property, add `onPress` for `AccordionItem`.
 - [2.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.0) - Change library code to typescript and Replacing `TouchableOpacity` with `Pressable`.
-- [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support rtl and update Readme.
-- [1.0.3](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.3) - Accordion list flatlist props bug fixes.
+- [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support RTL and update `README`.
+- [1.0.3](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.3) - Accordion list `FlatList` props bug fixes.
 - [1.0.2](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.2) - Accordion Item Bug fixes.
-- [1.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.1) - Update Readme.
+- [1.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.1) - Update `README`.
 - [1.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.0) - First release.
 
 ### Accordion list
