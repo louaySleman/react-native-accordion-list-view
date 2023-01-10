@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import {View, Animated, LayoutAnimation, I18nManager, Pressable} from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Animated, LayoutAnimation, I18nManager, Pressable } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { toggleAnimation } from '../../animations/toggleAnimation';
 import { AccordionItemProps } from '../../models/AccordionItem';
@@ -12,10 +12,17 @@ const AccordionItem = ({
   containerStyle = {},
   animationDuration = 300,
   isRTL = false,
+  isOpen = false,
+  onPress = undefined,
 }: AccordionItemProps) => {
-  const [showContent, setShowContent] = useState(false);
-  const animationController = useRef(new Animated.Value(0)).current;
+  const [showContent, setShowContent] = useState(isOpen);
+  const animationController = useRef(new Animated.Value(isOpen ? 1 : 0)).current;
 
+  useEffect(() => {
+    if (showContent && !isOpen) {
+      toggleListItem();
+    }
+  }, [isOpen]);
   const toggleListItem = () => {
     const config = {
       duration: animationDuration,
@@ -24,6 +31,7 @@ const AccordionItem = ({
     };
     Animated.timing(animationController, config).start();
     LayoutAnimation.configureNext(toggleAnimation(animationDuration));
+    if (onPress) onPress(!showContent);
     setShowContent(!showContent);
   };
   const arrowTransform = animationController.interpolate({
@@ -42,7 +50,7 @@ const AccordionItem = ({
               customIcon()
             )}
           </Animated.View>
-          {(isRTL && !I18nManager.isRTL) && customTitle()}
+          {isRTL && !I18nManager.isRTL && customTitle()}
         </View>
       </Pressable>
       {showContent && customBody()}

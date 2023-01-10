@@ -27,4 +27,15 @@ export interface AccordionItemProps {
      *  default value is false
      */
     isRTL?: boolean;
+    /**
+     *  An optional param to make accordion item already open
+     *  default value is false
+     */
+    isOpen?: boolean;
+    /**
+     *  An optional param to call a function when a click happen to accordion item
+     *  default value is false
+     *  @param {boolean} isOpen the current state of the accordion item
+     */
+    onPress?: (isOpen: boolean) => void;
 }

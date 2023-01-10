@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import AccordionItem from '../AccordionItem';
 import { AccordionListProps } from '../../models/AccordionList';
@@ -11,8 +11,10 @@ const AccordionList = ({
   containerItemStyle = {},
   animationDuration = 300,
   isRTL = false,
+  expandMultiple = true,
   ...props
 }: AccordionListProps) => {
+  const [currentlyOpen, setCurrentlyOpen] = useState<any>(null);
   const renderItem = ({ item }: { item: any }) => (
     <AccordionItem
       containerStyle={containerItemStyle}
@@ -21,6 +23,12 @@ const AccordionList = ({
       customIcon={customIcon}
       animationDuration={animationDuration}
       isRTL={isRTL}
+      isOpen={JSON.stringify(currentlyOpen) === JSON.stringify(item)}
+      onPress={(status) => {
+        if (status && !expandMultiple) {
+          setCurrentlyOpen(item);
+        }
+      }}
     />
   );
   return <FlatList data={data} renderItem={renderItem} keyExtractor={(item, index) => index.toString()} {...props} />;
