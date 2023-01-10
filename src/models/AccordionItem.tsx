@@ -35,7 +35,7 @@ export interface AccordionItemProps {
   isOpen?: boolean;
   /**
    *  An optional param to call a function when a click happen to accordion item
-   *  default value is false
+   *  default value is undefined
    *  @param {boolean} isOpen the current state of the accordion item
    */
   onPress?: (isOpen: boolean) => void;

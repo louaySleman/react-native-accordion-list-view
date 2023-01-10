@@ -4,7 +4,7 @@ Implemented using [react-native-vector-icons](https://github.com/oblador/react-n
 
 
 <p align="left">
-  <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v2.0-blue"></a>
+  <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v2.0.1-blue"></a>
   <a href="https://travis-ci.org/louay12/react-native-accordion-list-view"><img src="https://img.shields.io/travis/react-native-elements/react-native-elements/master.svg"></a>
 </p>
 
@@ -16,20 +16,20 @@ Implemented using [react-native-vector-icons](https://github.com/oblador/react-n
 
 ## Getting started
 ```js
-    npm install react-native-accordion-list-view --save
+npm install react-native-accordion-list-view --save
 ```
 or
 ```js
-    yarn add react-native-accordion-list-view
+yarn add react-native-accordion-list-view
 ```
 Now we need to install [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
 
 ```js
-    npm install react-native-vector-icons --save
+npm install react-native-vector-icons --save
 ```
 or
 ```js
-    yarn add react-native-vector-icons
+yarn add react-native-vector-icons
 ```
 
 ## Platforms Supported
@@ -49,7 +49,7 @@ if (Platform.OS === 'android') {
 
 ### Demo
 <p>
-   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/demo.gif" />
+   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/singleSelect.gif" />
 </p>
 
 ## Versioning
@@ -57,6 +57,7 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 ### Breaking History:
 
+- [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple expands, Allow make an `AccordionItem` already open by default using `isOpen` property, Add onPress for the `AccordionItem`.
 - [2.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.0) - Change library code to typescript and Replacing `TouchableOpacity` with `Pressable`.
 - [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support rtl and update Readme.
 - [1.0.3](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.3) - Accordion list flatlist props bug fixes.
@@ -76,6 +77,7 @@ This project follows semantic versioning. We do not hesitate to release breaking
 | style              | ViewStyle                | No        | {}                  | Styling for container view                                                                       |
 | animationDuration  | Number                   | No        | 300                 | Accordion animation duration                                                                     |
 | isRTL             | Boolean                   | No        | false               | Support RTL                                                                                      |
+| expandMultiple             | Boolean                   | No        | false               | Allow more than one section to be expanded                                                                                      |
 
 
 ### More props
@@ -117,6 +119,7 @@ const App = () => {
                     customTitle={item => <Text>{item.title}</Text>}
                     customBody={item => <Text>{item.body}</Text>}
                     animationDuration={400}
+                    expandMultiple={true}
                 />
             </View>
         </SafeAreaView>
@@ -138,14 +141,16 @@ const styles = StyleSheet.create({
 ### Accordion Item
 This component allows you to use `Accordion Item` component in any place if you have your own wrapper or if you have a problem with using `FlatList` in your screen.
 
-| Props             | Params                   | isRequire | Default             | Description                                                                                      | 
-|-------------------|--------------------------|-----------|---------------------|--------------------------------------------------------------------------------------------------|
-| customTitle       | () => JSX.Element    | Yes       |                     | Function that returns a React element to display as Accordion title                              |
-| customBody        | () => JSX.Element    | Yes       |                     | Function that returns a React element to display as Accordion body                               |
-| customIcon        | () => JSX.Element        | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                               |
-| containerStyle    | ViewStyle                   | No        | {}                  | Styling for Accordion item container view                                                        |
-| animationDuration | Number                   | No        | 300                 | Accordion animation duration                                                                     |
-| isRTL             | Boolean                   | No        | false               | Support RTL                                                                                      |
+| Props             | Params           | isRequire | Default             | Description                                                                                                                       | 
+|-------------------|------------------|-----------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| customTitle       | () => JSX.Element | Yes       |                     | Function that returns a React element to display as Accordion title                                                               |
+| customBody        | () => JSX.Element | Yes       |                     | Function that returns a React element to display as Accordion body                                                                |
+| customIcon        | () => JSX.Element | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                                                                |
+| containerStyle    | ViewStyle        | No        | {}                  | Styling for Accordion item container view                                                                                         |
+| animationDuration | Number           | No        | 300                 | Accordion animation duration                                                                                                      |
+| isRTL             | Boolean          | No        | false               | Support RTL                                                                                                                       |
+| isOpen             | Boolean          | No        | false               | An optional param to make accordion item already open                                                                             |
+| onPress             | (isOpen: boolean) => void       | No        | -                   | An optional callback function called when a click happen to the accordion item and return the current state (if it's open or not) |
 
 ### Example
 
@@ -183,6 +188,8 @@ const App = () => {
             customTitle={() => <Text>{item.title}</Text>}
             customBody={() => <Text>{item.body}</Text>}
             animationDuration={400}
+            isOpen={false}
+            onPress={(isOpen) => console.log(isOpen)}
           />
         ))}
       </ScrollView>

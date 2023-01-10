@@ -11,7 +11,7 @@ const AccordionList = ({
   containerItemStyle = {},
   animationDuration = 300,
   isRTL = false,
-  expandMultiple = true,
+  expandMultiple = false,
   ...props
 }: AccordionListProps) => {
   const [currentlyOpen, setCurrentlyOpen] = useState<any>(null);
