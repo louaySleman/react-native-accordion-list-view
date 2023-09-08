@@ -4,7 +4,7 @@ Implemented using [react-native-vector-icons](https://github.com/oblador/react-n
 
 
 <p align="left">
-  <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v2.0.1-blue"></a>
+  <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v2.0.2-blue"></a>
   <a href="https://travis-ci.org/louay12/react-native-accordion-list-view"><img src="https://img.shields.io/badge/Build-Passing-pass"></a>
 </p>
 
