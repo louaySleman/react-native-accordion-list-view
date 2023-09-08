@@ -41,9 +41,9 @@ yarn add react-native-vector-icons
 This plugin work with Layout Animation and In order to get this to work on Android you need to set the following flags via UIManager:
 ```javascript
 if (Platform.OS === 'android') {
-  if (UIManager.setLayoutAnimationEnabledExperimental) {
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-  }
+    if (UIManager.setLayoutAnimationEnabledExperimental) {
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
 }
 ```
 
@@ -63,9 +63,9 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 - [2.0.2](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.2) - New Features
 
-- **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
+  **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
 
-- **pressableProps**: We've added a new prop called `pressableProps` to both the accordion list and accordion item components. This allows you to customize the styles and ripple effects for the pressable component, giving you more control over the user interaction experience.
+  **pressableProps**: We've added a new prop called `pressableProps` to both the accordion list and accordion item components. This allows you to customize the styles and ripple effects for the pressable component, giving you more control over the user interaction experience.
 - [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple expanding, allow `AccordionItem` to be opened by default using `isOpen` property, add `onPress` for `AccordionItem`.
 - [2.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.0) - Change library code to typescript and Replacing `TouchableOpacity` with `Pressable`.
 - [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support RTL and update `README`.
@@ -252,51 +252,51 @@ import {View, SafeAreaView, StyleSheet, Text, ScrollView, Platform, UIManager} f
 import {AccordionItem} from 'react-native-accordion-list-view';
 
 const App = () => {
-  const data = [
-    {
-      id: 0,
-      title: 'Lorem Ipsum is simply dummy',
-      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    },
-    {
-      id: 1,
-      title: 'Lorem Ipsum is simply dummy',
-      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    },
-  ];
-  useEffect(() => {
-      if (Platform.OS === 'android') {
-          if (UIManager.setLayoutAnimationEnabledExperimental) {
-              UIManager.setLayoutAnimationEnabledExperimental(true);
-          }
-      }
-  }, []);
-  return (
-    <SafeAreaView>
-      <ScrollView style={styles.container}>
-        {data.map(item => (
-          <AccordionItem
-            key={item.id}
-            customTitle={() => <Text>{item.title}</Text>}
-            customBody={() => <Text>{item.body}</Text>}
-            animationDuration={400}
-            isOpen={false}
-            onPress={(isOpen) => console.log(isOpen)}
-          />
-        ))}
-      </ScrollView>
-    </SafeAreaView>
-  );
+    const data = [
+        {
+            id: 0,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+        {
+            id: 1,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+    ];
+    useEffect(() => {
+        if (Platform.OS === 'android') {
+            if (UIManager.setLayoutAnimationEnabledExperimental) {
+                UIManager.setLayoutAnimationEnabledExperimental(true);
+            }
+        }
+    }, []);
+    return (
+        <SafeAreaView>
+            <ScrollView style={styles.container}>
+                {data.map(item => (
+                    <AccordionItem
+                        key={item.id}
+                        customTitle={() => <Text>{item.title}</Text>}
+                        customBody={() => <Text>{item.body}</Text>}
+                        animationDuration={400}
+                        isOpen={false}
+                        onPress={(isOpen) => console.log(isOpen)}
+                    />
+                ))}
+            </ScrollView>
+        </SafeAreaView>
+    );
 };
 
 export default App;
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: '2%',
-    paddingHorizontal: '3%',
-    height: '100%',
-    backgroundColor: '#e7e7e7',
-  },
+    container: {
+        paddingVertical: '2%',
+        paddingHorizontal: '3%',
+        height: '100%',
+        backgroundColor: '#e7e7e7',
+    },
 });
 
 ```

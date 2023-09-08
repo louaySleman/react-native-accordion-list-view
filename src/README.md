@@ -63,9 +63,9 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 - [2.0.2](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.2) - New Features
 
-- **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
+  **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
 
-- **pressableProps**: We've added a new prop called `pressableProps` to both the accordion list and accordion item components. This allows you to customize the styles and ripple effects for the pressable component, giving you more control over the user interaction experience.
+  **pressableProps**: We've added a new prop called `pressableProps` to both the accordion list and accordion item components. This allows you to customize the styles and ripple effects for the pressable component, giving you more control over the user interaction experience.
 - [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple expanding, allow `AccordionItem` to be opened by default using `isOpen` property, add `onPress` for `AccordionItem`.
 - [2.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.0) - Change library code to typescript and Replacing `TouchableOpacity` with `Pressable`.
 - [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support RTL and update `README`.
