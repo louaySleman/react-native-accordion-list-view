@@ -48,10 +48,14 @@ if (Platform.OS === 'android') {
 ```
 
 ### Demo
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
 <p>
-   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/singleSelect.gif" />
+   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/android.gif" />
 </p>
-
+<p>
+   <img width="200" src="https://raw.githubusercontent.com/louaySleman/react-native-accordion-list-view/master/examples/ios.gif" />
+</p>
+</div>
 ## Versioning
 This project follows semantic versioning. We do not hesitate to release breaking changes but they will be in a major version.
 
@@ -190,7 +194,7 @@ const App = () => {
                     customTitle={item => <Text>{item.title}</Text>}
                     customBody={item => <Text>{item.body}</Text>}
                     animationDuration={400}
-                    defaultOpenIndices={[1, 3]}
+                    defaultOpenIndices={[0, 2]}
                     expandMultiple={true}
                     containerItemStyle={{padding: 0}}
                     pressableProps={{
