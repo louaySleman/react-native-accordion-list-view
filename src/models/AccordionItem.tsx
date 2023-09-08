@@ -1,42 +1,71 @@
 import { ViewStyle } from 'react-native';
+import * as React from 'react';
+import { AccordionPressableProps } from './AccordionPressable';
 
+/**
+ * Props for the AccordionItem component.
+ * @interface AccordionItemProps
+ */
 export interface AccordionItemProps {
   /**
-   * Function that returns a React element to display as Accordion title
+   * Function that returns a React element to display as Accordion title.
+   * @function
+   * @returns {JSX.Element} - The React element for the title.
    */
   customTitle: () => JSX.Element;
+
   /**
-   * Function that returns a React element to display as Accordion body
+   * Function that returns a React element to display as Accordion body.
+   * @function
+   * @returns {JSX.Element} - The React element for the body.
    */
   customBody: () => JSX.Element;
+
   /**
-   * An optional Function that returns a React element to display as Accordion icon
-   * default icon keyboard-arrow-left
+   * An optional function that returns a React element to display as Accordion icon.
+   * Default icon is keyboard-arrow-left.
+   * @function
+   * @returns {JSX.Element} - The React element for the icon.
    */
   customIcon?: () => JSX.Element;
+
   /**
-   * An optional param to add custom container style
+   * An optional parameter to add custom container style.
+   * @type {ViewStyle}
    */
   containerStyle?: ViewStyle;
+
   /**
-   *  An optional param to control Accordion animation duration
-   *  default value is 300
+   * An optional parameter to control Accordion animation duration.
+   * Default value is 300.
+   * @type {number}
    */
   animationDuration?: number;
+
   /**
-   *  An optional param to support RTL layout
-   *  default value is false
+   * An optional parameter to support RTL layout.
+   * Default value is false.
+   * @type {boolean}
    */
   isRTL?: boolean;
+
   /**
-   *  An optional param to make accordion item already open
-   *  default value is false
+   * An optional parameter to make the accordion item already open.
+   * Default value is false.
+   * @type {boolean}
    */
   isOpen?: boolean;
+
   /**
-   *  An optional param to call a function when a click happen to accordion item
-   *  default value is undefined
-   *  @param {boolean} isOpen the current state of the accordion item
+   * An optional parameter to call a function when a click happens to the accordion item.
+   * Default value is undefined.
+   * @param {boolean} isOpen - The current state of the accordion item.
    */
   onPress?: (isOpen: boolean) => void;
+
+  /**
+   * Additional props for configuring the Pressable component.
+   * @type {AccordionPressableProps}
+   */
+  pressableProps?: AccordionPressableProps;
 }

@@ -5,7 +5,7 @@ Implemented using [react-native-vector-icons](https://github.com/oblador/react-n
 
 <p align="left">
   <a href="https://www.npmjs.com/package/react-native-accordion-list-view"><img src="https://img.shields.io/badge/npm-v2.0.1-blue"></a>
-  <a href="https://travis-ci.org/louay12/react-native-accordion-list-view"><img src="https://img.shields.io/travis/react-native-elements/react-native-elements/master.svg"></a>
+  <a href="https://travis-ci.org/louay12/react-native-accordion-list-view"><img src="https://img.shields.io/badge/Build-Passing-pass"></a>
 </p>
 
 <p align="left">
@@ -57,6 +57,11 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 ### Breaking History:
 
+- [2.0.2](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.2) - New Features
+
+- **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
+
+- **pressableProps**: We've added a new prop called `pressableProps` to both the accordion list and accordion item components. This allows you to customize the styles and ripple effects for the pressable component, giving you more control over the user interaction experience.
 - [2.0.1](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.1) - Allow single/multiple expanding, allow `AccordionItem` to be opened by default using `isOpen` property, add `onPress` for `AccordionItem`.
 - [2.0.0](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.0) - Change library code to typescript and Replacing `TouchableOpacity` with `Pressable`.
 - [1.0.4](https://www.npmjs.com/package/react-native-accordion-list-view/v/1.0.4) - Support RTL and update `README`.
@@ -67,17 +72,19 @@ This project follows semantic versioning. We do not hesitate to release breaking
 
 ### Accordion list
 
-| Props              | Params                   | isRequire | Default             | Description                                                                                      | 
-|--------------------|--------------------------|-----------|---------------------|--------------------------------------------------------------------------------------------------|
-| data               | Array                    | Yes       |                     | For simplicity, data is a plain array. If you want to use something else, like an immutable list |
-| customTitle        | (item) => JSX.Element    | Yes       |                     | Function that returns a React element to display as Accordion title                              |
-| customBody         | (item) => JSX.Element    | Yes       |                     | Function that returns a React element to display as Accordion body                               |
-| customIcon         | () => JSX.Element        | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                               |
-| containerItemStyle | ViewStyle                   | No        | {}                  | Styling for Accordion item container view                                                        |
-| style              | ViewStyle                | No        | {}                  | Styling for container view                                                                       |
-| animationDuration  | Number                   | No        | 300                 | Accordion animation duration                                                                     |
-| isRTL             | Boolean                   | No        | false               | Support RTL                                                                                      |
-| expandMultiple             | Boolean                   | No        | false               | Allow more than one section to be expanded                                                                                      |
+| Props              | Params                                                            | isRequire | Default             | Description                                                                                                                                      | 
+|--------------------|-------------------------------------------------------------------|-----------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| data               | Array                                                             | Yes       |                     | For simplicity, data is a plain array. If you want to use something else, like an immutable list                                                 |
+| customTitle        | (item) => JSX.Element                                             | Yes       |                     | Function that returns a React element to display as Accordion title                                                                              |
+| customBody         | (item) => JSX.Element                                             | Yes       |                     | Function that returns a React element to display as Accordion body                                                                               |
+| customIcon         | () => JSX.Element                                                 | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                                                                               |
+| containerItemStyle | ViewStyle                                                         | No        | {}                  | Styling for Accordion item container view                                                                                                        |
+| style              | ViewStyle                                                         | No        | {}                  | Styling for container view                                                                                                                       |
+| animationDuration  | Number                                                            | No        | 300                 | Accordion animation duration                                                                                                                     |
+| isRTL             | Boolean                                                           | No        | false               | Support RTL                                                                                                                                      |
+| expandMultiple             | Boolean                                                           | No        | false               | Allow more than one section to be expanded                                                                                                       |
+| defaultOpenIndices             | number[]                                                          | No        | []                  | An array of indices indicating which sections should be expanded by default. If `expandMultiple` is set to `false`, it can only contain a single index. |
+| pressableProps             | [AccordionPressableProps](https://reactnative.dev/docs/pressable) | No        | {}                  | Additional props for configuring the Pressable component.                                                                                                       |
 
 
 ### More props
@@ -86,6 +93,7 @@ This is a wrapper around `Flatlist`, all their props works well and the inherite
 
 ### Example
 
+#### Without Custom Styles
 ```javascript
 import React, { useEffect } from 'react';
 import {View, SafeAreaView, StyleSheet, Text, Platform, UIManager} from 'react-native';
@@ -138,6 +146,85 @@ const styles = StyleSheet.create({
 
 ```
 
+#### With Custom Styles
+```javascript
+import React, { useEffect } from 'react';
+import {View, SafeAreaView, StyleSheet, Text, Platform, UIManager} from 'react-native';
+import {AccordionList} from 'react-native-accordion-list-view';
+
+const App = () => {
+    const data = [
+        {
+            id: 0,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+        {
+            id: 1,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+        {
+            id: 2,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+        {
+            id: 3,
+            title: 'Lorem Ipsum is simply dummy',
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        },
+    ];
+    useEffect(() => {
+        if (Platform.OS === 'android') {
+            if (UIManager.setLayoutAnimationEnabledExperimental) {
+                UIManager.setLayoutAnimationEnabledExperimental(true);
+            }
+        }
+    }, []);
+    return (
+        <SafeAreaView>
+            <View style={styles.container}>
+                <AccordionList
+                    data={data}
+                    customTitle={item => <Text>{item.title}</Text>}
+                    customBody={item => <Text>{item.body}</Text>}
+                    animationDuration={400}
+                    defaultOpenIndices={[1, 3]}
+                    expandMultiple={true}
+                    containerItemStyle={{padding: 0}}
+                    pressableProps={{
+                        style: ({pressed}) => [
+                            {
+                                padding: '2%',
+                                backgroundColor:
+                                    pressed && Platform.OS == 'ios'
+                                        ? 'rgb(210, 230, 255)'
+                                        : 'transparent',
+                            },
+                        ],
+                        android_ripple: {
+                            color: 'rgb(210, 230, 255)',
+                        },
+                    }}
+                />
+            </View>
+        </SafeAreaView>
+    );
+};
+
+export default App;
+const styles = StyleSheet.create({
+    container: {
+        paddingVertical: '2%',
+        paddingHorizontal: '3%',
+        height: '100%',
+        backgroundColor: '#e7e7e7',
+    },
+});
+
+```
+
 ### Accordion Item
 This component allows you to use `Accordion Item` component in any place if you have your own wrapper or if you have a problem with using `FlatList` in your screen.
 
@@ -151,6 +238,7 @@ This component allows you to use `Accordion Item` component in any place if you 
 | isRTL             | Boolean          | No        | false               | Support RTL                                                                                                                       |
 | isOpen             | Boolean          | No        | false               | An optional param to make accordion item already open                                                                             |
 | onPress             | (isOpen: boolean) => void       | No        | -                   | An optional callback function called when a click happen to the accordion item and return the current state (if it's open or not) |
+| pressableProps             | [AccordionPressableProps](https://reactnative.dev/docs/pressable) | No        | {}                  | Additional props for configuring the Pressable component.                                                                                                       |
 
 ### Example
 
@@ -208,3 +296,16 @@ const styles = StyleSheet.create({
 });
 
 ```
+### Common Issues and Errors
+
+Error: You have multiple items opened by default, but expandMultiple is disabled, If you encounter the following error message in your console:
+
+```javascript
+console.error('Error: You have multiple items opened by default, but expandMultiple is disabled.');
+```
+This error occurs when you have set expandMultiple to false and provided an array with multiple indices in the defaultOpenIndices prop. Remember that when expandMultiple is set to false, you can only specify a single index in the defaultOpenIndices array.
+
+To resolve this issue, make sure that defaultOpenIndices contains only one index when expandMultiple is false.
+
+### License
+MIT

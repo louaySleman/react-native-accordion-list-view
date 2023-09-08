@@ -1,6 +1,6 @@
 {
   "name": "react-native-accordion-list-view",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Animated accordion collapsable List for react native.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
