@@ -20,12 +20,12 @@ const AccordionItem = ({
   isOpen = false,
   onPress = undefined,
   pressableProps = {},
-}: AccordionItemProps) => {
+}: AccordionItemProps): JSX.Element => {
   /**
    * Indicates whether the content of the accordion item is currently displayed.
    * @type {boolean}
    */
-  const [showContent, setShowContent] = useState(isOpen);
+  const [showContent, setShowContent] = useState<boolean>(isOpen);
   /**
    * A controller for managing the animation of the accordion item.
    * @type {Animated.Value}

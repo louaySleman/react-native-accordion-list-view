@@ -60,7 +60,8 @@ if (Platform.OS === 'android') {
 This project follows semantic versioning. We do not hesitate to release breaking changes but they will be in a major version.
 
 ### Breaking History:
-
+- [2.0.3](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.3) - New Features
+ We've enhanced the Accordion list by adding support for the index parameter in the customTitle, customBody, and customIcon functions. This enables greater customization possibilities, allowing you to dynamically adjust the rendering of elements based on the index of each accordion item. Explore these new parameters to tailor your accordion items more precisely to your application's requirements.
 - [2.0.2](https://www.npmjs.com/package/react-native-accordion-list-view/v/2.0.2) - New Features
 
   **defaultOpenIndices**: You can now specify an array of indices in the `defaultOpenIndices` prop for the accordion list. These indices indicate which sections should be expanded by default, allowing you to control the initial state of the accordion.
@@ -79,9 +80,9 @@ This project follows semantic versioning. We do not hesitate to release breaking
 | Props              | Params                                                            | isRequire | Default             | Description                                                                                                                                      | 
 |--------------------|-------------------------------------------------------------------|-----------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | data               | Array                                                             | Yes       |                     | For simplicity, data is a plain array. If you want to use something else, like an immutable list                                                 |
-| customTitle        | (item) => JSX.Element                                             | Yes       |                     | Function that returns a React element to display as Accordion title                                                                              |
-| customBody         | (item) => JSX.Element                                             | Yes       |                     | Function that returns a React element to display as Accordion body                                                                               |
-| customIcon         | () => JSX.Element                                                 | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                                                                               |
+| customTitle        | (item, index) => JSX.Element                                      | Yes       |                     | Function that returns a React element to display as Accordion title                                                                              |
+| customBody         | (item, index) => JSX.Element                                      | Yes       |                     | Function that returns a React element to display as Accordion body                                                                               |
+| customIcon         | (index) => JSX.Element                                            | No        | keyboard-arrow-left | Function that returns a React element to display as Accordion icon                                                                               |
 | containerItemStyle | ViewStyle                                                         | No        | {}                  | Styling for Accordion item container view                                                                                                        |
 | style              | ViewStyle                                                         | No        | {}                  | Styling for container view                                                                                                                       |
 | animationDuration  | Number                                                            | No        | 300                 | Accordion animation duration                                                                                                                     |
@@ -191,8 +192,8 @@ const App = () => {
             <View style={styles.container}>
                 <AccordionList
                     data={data}
-                    customTitle={item => <Text>{item.title}</Text>}
-                    customBody={item => <Text>{item.body}</Text>}
+                    customTitle={(item, index) => <Text>{item.title}</Text>}
+                    customBody={(item, index) => <Text>{item.body}</Text>}
                     animationDuration={400}
                     defaultOpenIndices={[0, 2]}
                     expandMultiple={true}

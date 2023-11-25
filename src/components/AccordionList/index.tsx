@@ -31,7 +31,7 @@ const AccordionList = ({
   defaultOpenIndices = [],
   pressableProps = {},
   ...props
-}: AccordionListProps) => {
+}: AccordionListProps): JSX.Element => {
   /**
    * State variable to track the currently open item in the accordion.
    * @type {any}
@@ -73,12 +73,11 @@ const AccordionList = ({
    * @param {{ item: any; index: number }} - The item and its index.
    * @returns {JSX.Element} - The rendered AccordionItem component.
    */
-  const renderItem = ({ item, index }: { item: any; index: number }) => (
+  const renderItem = ({ item, index }: { item: any; index: number }): JSX.Element => (
     <AccordionItem
       containerStyle={containerItemStyle}
-      customTitle={() => customTitle(item)}
-      customBody={() => customBody(item)}
-      customIcon={customIcon}
+      customTitle={() => customTitle(item, index)}
+      customBody={() => customBody(item, index)}
       animationDuration={animationDuration}
       isRTL={isRTL}
       isOpen={checkIfOpen(item, index)}
@@ -89,6 +88,7 @@ const AccordionList = ({
         }
       }}
       pressableProps={pressableProps}
+      customIcon={customIcon ? () => customIcon(index) : undefined}
     />
   );
   return <FlatList data={data} renderItem={renderItem} keyExtractor={(item, index) => index.toString()} {...props} />;

@@ -18,25 +18,28 @@ export interface AccordionListProps extends Omit<FlatListProps<any>, 'data' | 'r
    * Function that returns a React element to display as Accordion title.
    * @function
    * @param {any} item - The data item for the Accordion.
+   * @param {number} [index] - The index of the item in the data array.
    * @returns {JSX.Element} - The React element for the title.
    */
-  customTitle: (item: any) => JSX.Element;
+  customTitle: (item: any, index: number) => JSX.Element;
 
   /**
    * Function that returns a React element to display as Accordion body.
    * @function
    * @param {any} item - The data item for the Accordion.
+   * @param {number} [index] - The index of the item in the data array.
    * @returns {JSX.Element} - The React element for the body.
    */
-  customBody: (item: any) => JSX.Element;
+  customBody: (item: any, index: number) => JSX.Element;
 
   /**
    * An optional function that returns a React element to display as Accordion icon.
    * Default icon is keyboard-arrow-left.
    * @function
+   * @param {number} [index] - The index of the item in the data array.
    * @returns {JSX.Element} - The React element for the icon.
    */
-  customIcon?: () => JSX.Element;
+  customIcon?: (index: number) => JSX.Element;
 
   /**
    * An optional parameter to add custom container item style.
